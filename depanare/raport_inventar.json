@@ -1,0 +1,8 @@
+{
+  "servicii": {
+    "ssh": [
+      22
+    ]
+  },
+  "peste_prag": []
+}
