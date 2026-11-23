@@ -30,6 +30,7 @@ def pe_servicii(tinte):
             continue
         grupe[serviciu] = []
         grupe[serviciu].append(port)
+        return grupe
 
 
 def peste_prag(tinte, prag):
@@ -54,7 +55,7 @@ def main():
     grupe = pe_servicii(tinte)
     for serviciu, porturi in grupe.items():
         print(f"{serviciu}: {porturi}")
-        return grupe
+        
 
     mari = peste_prag(tinte, a.prag)
     print(f"Peste {a.prag}: {mari}")
@@ -62,7 +63,6 @@ def main():
     with open("raport_inventar.json", "w") as f:
         json.dump({"servicii": grupe, "peste_prag": mari}, f, indent=2)
     print("Raport salvat in raport_inventar.json")
-
 
 if __name__ == "__main__":
     main()
